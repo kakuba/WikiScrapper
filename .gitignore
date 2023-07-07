@@ -1,0 +1,3 @@
+# Project exclude paths
+/rekrutacja-wikiscrapper/htmlwikiclient/${project.build.directory}/classes/
+/rekrutacja-wikiscrapper/jsonwikiclient/${project.build.directory}/classes/
