@@ -16,19 +16,15 @@ public class WikiScrapperConfiguration {
     @Bean
     @Profile("!json")
     public WikiReader htmlWikiReader() {
-        return link -> {
-            HtmlWikiClient htmlWikiClient = new HtmlWikiClient();
-            return new WikiPage("", htmlWikiClient.readHtml(link), link, List.of(link));
-        };
+        HtmlWikiClient htmlWikiClient = new HtmlWikiClient();
+        return link -> new WikiPage("", htmlWikiClient.readHtml(link), link, List.of(link));
     }
 
     @Bean
     @Profile("json")
     public WikiReader jsonWikiReader() {
-        return link -> {
-            JsonWikiClient jsonWikiClient = new JsonWikiClient();
-            return new WikiPage("", jsonWikiClient.readJson(link), link, List.of(link));
-        };
+        JsonWikiClient jsonWikiClient = new JsonWikiClient();
+        return link -> new WikiPage("", jsonWikiClient.readJson(link), link, List.of(link));
     }
 
     @Bean

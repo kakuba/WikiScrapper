@@ -1,16 +1,12 @@
 package com.lastminute.recruitment.domain;
 
 import com.lastminute.recruitment.domain.error.WikiPageNotFound;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class WikiScrapper {
 
     private final WikiReader wikiReader;
     private final WikiPageRepository repository;
 
-    @Autowired
     public WikiScrapper(WikiReader wikiReader, WikiPageRepository repository) {
         this.wikiReader = wikiReader;
         this.repository = repository;
